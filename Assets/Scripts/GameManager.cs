@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        fadeAnimator = GameObject.FindGameObjectWithTag("BlackFade").GetComponent<Animator>();        
+        fadeAnimator = GameObject.FindGameObjectWithTag("BlackFade").GetComponent<Animator>();
+        fadeAnimator.SetTrigger("FadeIn");
     }
 
     public void RestartLevel()
