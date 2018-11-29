@@ -25,8 +25,13 @@ public class Character : MonoBehaviour {
         // attack
         if (Input.GetMouseButtonDown(0))
         {
+            string spell = GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().GetSelectedSpell();
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Fireball(mousePos);
+            if (spell == "fireball")
+            {
+                Fireball(mousePos);
+                GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().UseSelectedSpell();
+            }
         }
     }
 

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - AudioManager
   - BlackFade
+  - SpellHolder
   layers:
   - Default
   - TransparentFX
