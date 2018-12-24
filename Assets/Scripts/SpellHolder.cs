@@ -16,14 +16,13 @@ public class SpellHolder : MonoBehaviour {
     {
         spellWidth = (spells[0].GetComponent(typeof(RectTransform)) as RectTransform).sizeDelta.y;
         RectTransform rt = GetComponent(typeof(RectTransform)) as RectTransform;
-        rt.sizeDelta = new Vector2(spells.Length * (spellWidth) + gap * (spells.Length + 1), spellWidth + 2 * gap);
-        rt.localPosition = new Vector2(0, 100 + spellWidth);
 
-        for (float i = -spells.Length / 2; i < spells.Length / 2; i++)
+        for (float i = (float) -spells.Length / 2; i < (float) spells.Length / 2; i++)
         {
             Transform newCard = Instantiate(spells[(int) (i + spells.Length / 2)], new Vector2(0, 0), Quaternion.identity).transform;
             newCard.parent = transform;
             newCard.localPosition = new Vector2((i + 0.5f) * (spellWidth + gap), 0);
+            newCard.localScale = Vector3.one;
         }
     }
 
@@ -41,6 +40,17 @@ public class SpellHolder : MonoBehaviour {
     public void UseSelectedSpell()
     {
         if (selectedIndex != 0)
-            transform.GetChild(selectedIndex - 1).GetComponent<ButtonFunctions>().Use();
+            transform.GetChild(selectedIndex - 1).GetComponent<SpellButton>().Use();
+    }
+
+    public bool SpellsLeft()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<Button>().interactable)
+                return true;
+        }
+
+        return false;
     }
 }

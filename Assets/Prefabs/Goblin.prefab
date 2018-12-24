@@ -297,6 +297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe6b82ee867ccb4ea339911b5309833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 8300000, guid: f8120dca28d6bd046b5ae405e9160e8f, type: 3}
+  deathParticles: {fileID: 1200103048674436, guid: 01707926d9ae97743b68b63adad88c4e,
+    type: 2}
 --- !u!212 &212051159858503686
 SpriteRenderer:
   m_ObjectHideFlags: 1

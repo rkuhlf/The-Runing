@@ -69,9 +69,11 @@ GameObject:
   - component: {fileID: 4373240974248818}
   - component: {fileID: 95576691739523196}
   - component: {fileID: 114556176347481788}
+  - component: {fileID: 61833937974299940}
+  - component: {fileID: 50049901090268714}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +133,51 @@ Transform:
   m_Father: {fileID: 4373240974248818}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50049901090268714
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996434607006264}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61833937974299940
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996434607006264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0061888695, y: 0.6869676}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.680779, y: 2.7205138}
+  m_EdgeRadius: 0
 --- !u!95 &95576691739523196
 Animator:
   serializedVersion: 3
@@ -162,6 +209,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   fireball: {fileID: 1672573240862152, guid: 9c78b856359739d46a984b71c2543a47, type: 2}
+  waterball: {fileID: 1653940775615528, guid: 8b5a6fcd153bcbb4ab714208063a1d3c, type: 2}
+  wind: {fileID: 1603717269302500, guid: 823ec232b035de9438a810182633c76a, type: 2}
+  earth: {fileID: 1545797484794024, guid: 8ecc5cc9cad599742b7a3ef16945787c, type: 2}
+  fireSound: {fileID: 8300000, guid: af8805833edb294418fb6a8f1d88577c, type: 3}
+  waterSound: {fileID: 8300000, guid: 23e86632c7b3f794facd018bdf66d4a6, type: 3}
+  earthSound: {fileID: 8300000, guid: c23abf3e4a180d142a9f782f9581883b, type: 3}
+  windSound: {fileID: 8300000, guid: 8f30d3f5226b10c4c86d6444bd5f2199, type: 3}
 --- !u!212 &212345488926816038
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,6 +7,18 @@ public class AudioManager : MonoBehaviour
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
 
+    public static AudioManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void Mute()
     {
         gameObject.SetActive(!gameObject.active);

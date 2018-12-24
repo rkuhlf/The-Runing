@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
 
     private bool loadingLevel = false;
 
-    public int level = 0;
+    public int level = 1;
     public static GameManager instance = null;
 
-    private bool won = false;
+    private bool losing = false;
 
     void Awake()
     {
@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        losing = false;
         fadeAnimator = GameObject.FindGameObjectWithTag("BlackFade").GetComponent<Animator>();
-        fadeAnimator.SetTrigger("FadeIn");
     }
 
     public void RestartLevel()
@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
         FadeToLevel(index);
     }
 
+    public void LoadCurrentLevel()
+    {
+        FadeToLevel(level);
+    }
 
     public void FadeToLevel(int index)
     {
@@ -73,6 +77,53 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(index);
             loadingLevel = false;
         }
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Home")
+        {
+            if (Input.anyKey || Input.GetMouseButton(0))
+            {
+                LoadCurrentLevel();
+            }
+        } else
+        {
+            // Regular levels
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                Animator pause = GameObject.FindGameObjectWithTag("PauseScreen").GetComponent<Animator>();
+                bool paused = !pause.GetBool("Paused");
+                pause.SetBool("Paused", paused);
+                if (paused)
+                    Time.timeScale = 0;
+                else
+                    Time.timeScale = 1;
+            }
+
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                RestartLevel();
+            }
+
+
+            // Check if no bad guys left
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            {
+                GameObject.FindGameObjectWithTag("VictoryScreen").GetComponent<Animator>().SetBool("Activated", true);
+            } else if (!losing && !GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().SpellsLeft())
+            {
+                StartCoroutine(Lose());
+            }
+        }
+    }
+
+    private IEnumerator Lose()
+    {
+        losing = true;
+        yield return new WaitForSeconds(3);
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0 && losing)
+            GameObject.FindGameObjectWithTag("LossScreen").GetComponent<Animator>().SetBool("Activated", true);
     }
 }
 

@@ -8,6 +8,14 @@ public class FireBall : MonoBehaviour {
     public Vector2 vel;
     public float speed = 10;
 
+    public GameObject explodeParticles;
+    public AudioClip explodeEffect;
+
+    private void Start()
+    {
+        Destroy(gameObject, 20);
+    }
+
     private void Update()
     {
         transform.position = transform.position + (Vector3) (vel * speed * Time.deltaTime);
@@ -24,6 +32,9 @@ public class FireBall : MonoBehaviour {
 
     private void Explode()
     {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>().SetTrigger("Shake");
+        AudioManager.instance.PlaySingle(explodeEffect);
+        Instantiate(explodeParticles, transform.position, Quaternion.identity);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range);
         foreach (Collider2D collider in colliders)
         {
