@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         audioManager.PlayRepeating(music);
+        level = PlayerPrefs.GetInt("level");
+        if (level == 0)
+        {
+            PlayerPrefs.SetInt("level", 1);
+            level = 1;
+        }
     }
 
     void OnEnable()
@@ -59,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadCurrentLevel()
     {
+        PlayerPrefs.SetInt("level", level);
         FadeToLevel(level);
     }
 
@@ -87,7 +94,19 @@ public class GameManager : MonoBehaviour
             {
                 LoadCurrentLevel();
             }
-        } else
+        }
+        else if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
+            {
+                if (!GameObject.FindGameObjectWithTag("Tutorial").GetComponent<Tutorial>().PlayAnimation() && !loadingLevel)
+                {
+                    level++;
+                    LoadCurrentLevel();
+                }
+            }
+        }
+        else if (SceneManager.GetActiveScene().name != "FinishScreen")
         {
             // Regular levels
             if (Input.GetKeyUp(KeyCode.Escape))
@@ -111,7 +130,8 @@ public class GameManager : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 GameObject.FindGameObjectWithTag("VictoryScreen").GetComponent<Animator>().SetBool("Activated", true);
-            } else if (!losing && !GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().SpellsLeft())
+            }
+            else if (!losing && !GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().SpellsLeft())
             {
                 StartCoroutine(Lose());
             }

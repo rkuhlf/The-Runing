@@ -11,6 +11,11 @@ TagManager:
   - PauseScreen
   - VictoryScreen
   - LossScreen
+  - Mouse
+  - Canvas
+  - EventSystem
+  - Tutorial
+  - Obstacle
   layers:
   - Default
   - TransparentFX

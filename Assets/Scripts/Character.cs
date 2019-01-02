@@ -16,6 +16,15 @@ public class Character : MonoBehaviour {
     public AudioClip earthSound;
     public AudioClip windSound;
 
+    private Mouse mouse;
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        mouse = GameObject.FindGameObjectWithTag("Mouse").GetComponent<Mouse>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         // Movement
@@ -29,10 +38,10 @@ public class Character : MonoBehaviour {
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        transform.Translate(new Vector3(xInput, yInput) * Time.deltaTime * speed);
+        rb.MovePosition(transform.position + new Vector3(xInput, yInput) * Time.deltaTime * speed);
 
         // attack
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyUp(KeyCode.Space)) && EventSystem.current.currentSelectedGameObject == null)
+        if (Input.GetMouseButtonDown(0) && !mouse.IsMouseOnUI() || Input.GetKeyUp(KeyCode.Space))
         {
             string spell = GameObject.FindGameObjectWithTag("SpellHolder").GetComponent<SpellHolder>().GetSelectedSpell();
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

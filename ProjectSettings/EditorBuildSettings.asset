@@ -9,12 +9,69 @@ EditorBuildSettings:
     path: Assets/Scenes/Home.unity
     guid: 97504f61c1e2ebd4bb9e4b87766a1734
   - enabled: 1
-    path: Assets/Scenes/IntroduceWater.unity
+    path: Assets/Scenes/Tutorial.unity
+    guid: 99325ba2271a1f54f885518ce6f9d18a
+  - enabled: 1
+    path: Assets/Scenes/Levels/IntroduceWater.unity
     guid: 912efea5a1fdbaa499ee6e6d2548c72a
   - enabled: 1
-    path: Assets/Scenes/LineUpForWaterball.unity
+    path: Assets/Scenes/Levels/IntroducePressurePlate.unity
+    guid: d7632a54f81ea9c4991841a53811fdea
+  - enabled: 1
+    path: Assets/Scenes/Levels/IntroduceEarth.unity
+    guid: f5cccd83ce2b571408a69923e1c1969d
+  - enabled: 1
+    path: Assets/Scenes/Levels/LineUpForWaterball.unity
     guid: e85ed5fd4c9f1944fa9d532d9eb7e9ed
   - enabled: 1
-    path: Assets/Scenes/IntroduceWindWithWater.unity
+    path: Assets/Scenes/Levels/IntroduceFireballWithWind.unity
+    guid: b97ceaab868df9b4baedc77d35ea9479
+  - enabled: 1
+    path: Assets/Scenes/Levels/IntroduceWindWithWater.unity
     guid: 5b748c5a11ba82848a73908034f7665f
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlowBehindBlock.unity
+    guid: f2ca12ad76e220140b41aca238721be6
+  - enabled: 1
+    path: Assets/Scenes/Levels/FireballIntoRock.unity
+    guid: 38e9c62579d445841831e43a5a0165a9
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlowGoblinOntoPlate.unity
+    guid: d6150308dca602240b6f904f753359d4
+  - enabled: 1
+    path: Assets/Scenes/Levels/PressureAndRockFire.unity
+    guid: 3dad7a0bd53b0bd4b88018f562a62b7d
+  - enabled: 1
+    path: Assets/Scenes/Levels/EarthThroughRock.unity
+    guid: bd14fe4762637e84899fdf442e06f112
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlowGoblinToPressurePlate.unity
+    guid: 015a7371b67d8a140b457309a2911b34
+  - enabled: 1
+    path: Assets/Scenes/Levels/WindyWall.unity
+    guid: b5b8b823f10fa05498ec3d6ef030e979
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlowIntoRock.unity
+    guid: 470994b0c674a3647b8562254595d2b7
+  - enabled: 1
+    path: Assets/Scenes/Levels/MoveWithBlock.unity
+    guid: 4984cb964684cf6428056af22beac969
+  - enabled: 1
+    path: Assets/Scenes/Levels/DoubleBlow.unity
+    guid: dc4fedc204eeef74dbb4f4b142dcaa71
+  - enabled: 1
+    path: Assets/Scenes/Levels/PressureBonanza.unity
+    guid: 5c661ea15ec0e4a44a27591a039bda89
+  - enabled: 1
+    path: Assets/Scenes/Levels/WindIntoFireball.unity
+    guid: 2ba429e8be87da140aa04e7f4afd8397
+  - enabled: 1
+    path: Assets/Scenes/Levels/BlowAndBackAgain.unity
+    guid: 47079086c2fbbfd47b450b776369a5b1
+  - enabled: 1
+    path: Assets/Scenes/Levels/AllTogether.unity
+    guid: 347bba91b23045a479d8564b553a284f
+  - enabled: 1
+    path: Assets/Scenes/FinishScreen.unity
+    guid: 6e91c7aa6a5aaa5469ae193b3f7365b4
   m_configObjects: {}

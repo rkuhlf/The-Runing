@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6255755574646090971}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -673,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 224299109556907600, guid: 3fad5ccc765c78c42bdb7cdf160d1efe,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 57.613617
+      value: 57.995316
       objectReference: {fileID: 0}
     - target: {fileID: 224299109556907600, guid: 3fad5ccc765c78c42bdb7cdf160d1efe,
         type: 3}
@@ -713,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 224299109556907600, guid: 3fad5ccc765c78c42bdb7cdf160d1efe,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.43514118
+      value: 0.43802965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fad5ccc765c78c42bdb7cdf160d1efe, type: 3}

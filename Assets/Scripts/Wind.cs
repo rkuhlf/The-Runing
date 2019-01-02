@@ -9,7 +9,7 @@ public class Wind : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 20);
+        Destroy(gameObject, 1.1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

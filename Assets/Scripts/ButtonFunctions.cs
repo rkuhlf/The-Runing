@@ -73,4 +73,12 @@ public class ButtonFunctions : MonoBehaviour {
         gm.level++;
         gm.LoadCurrentLevel();
     }
+
+    public void ResetGame()
+    {
+        AudioManager.instance.PlaySingle(selectSound);
+        GameManager gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gm.level = 1;
+        gm.FadeToLevel(0);
+    }
 }

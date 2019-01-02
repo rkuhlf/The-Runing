@@ -9,11 +9,20 @@ public class Goblin : MonoBehaviour {
     private Vector3 targetKnockback;
     private float startTime;
     private float lerpTime = 1;
+    private Rigidbody2D rb;
 
     public AudioClip deathEffect;
     public GameObject deathParticles;
+    public BoxCollider2D hardCollider;
 
-	public void Die()
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>() != null)
+            Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>(), hardCollider);
+    }
+
+    public void Die()
     {
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         AudioManager.instance.PlaySingle(deathEffect);
@@ -34,11 +43,14 @@ public class Goblin : MonoBehaviour {
         {
             float t = Time.time - startTime / lerpTime;
             t = Mathf.Sin(t * Mathf.PI * 0.5f);
-            transform.position = Vector3.Lerp(startPosition, targetKnockback, t);
+            rb.MovePosition(Vector3.Lerp(startPosition, targetKnockback, t));
             if (t > 0.99f)
             {
                 knockingBack = false;
             }
+        } else
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 }
