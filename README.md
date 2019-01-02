@@ -24,5 +24,5 @@
 ## Links
 - [Github](https://github.com/rkuhlf/The-Runing)
 - [Newgrounds](https://rilstar.newgrounds.com/)
-- [Gamejolt](https://gamejolt.com/@rkuhl/games)
+- [Itch](https://rkuhl.itch.io/the-runing)
 
