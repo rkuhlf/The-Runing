@@ -15,6 +15,7 @@
 - *esc* - pause
 - *nums* - select spell
 - *space* - shoot
+- *m* - mute
 
 ## Tools
 - Game Engine - [Unity](https://unity3d.com/)
