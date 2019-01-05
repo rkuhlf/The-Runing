@@ -23,7 +23,7 @@
 - Music - [Antti Luode](https://drive.google.com/drive/folders/0B1t5awWiDLZheGlJRHdFSThmNXM)
 
 ## Links
-- [Github](https://github.com/rkuhlf/The-Runing)
+- [GameJolt](https://gamejolt.com/games/runing/388134)
 - [Newgrounds](https://rilstar.newgrounds.com/)
 - [Itch](https://rkuhl.itch.io/the-runing)
 
